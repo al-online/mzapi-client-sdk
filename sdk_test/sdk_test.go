@@ -1,14 +1,15 @@
 package sdk_test
 
 import (
-	"github.com/al-online/mzapi-client-sdk/services"
+	"fmt"
+	mzSDK "github.com/al-online/mzapi-client-sdk/services"
 	"github.com/al-online/mzapi-client-sdk/services/common/models"
 	"log"
 	"testing"
 )
 
 func TestSDK(t *testing.T) {
-	client, err := services.NewClientWithSecret("chery", "abcdefg")
+	client, err := mzSDK.NewClientWithSecret("chery", "abcdefg")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,4 +28,11 @@ func TestSDK(t *testing.T) {
 		log.Println(err.Error())
 	}
 	log.Println(resp3)
+}
+
+func ExampleNewClientWithSecret() {
+	client, _ := mzSDK.NewClientWithSecret("chery", "abcdefg")
+	name, _ := client.GetNameByGETMethod("chery")
+	fmt.Println(name)
+	// Output: chery
 }
