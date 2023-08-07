@@ -1,9 +1,9 @@
 package sdk_test
 
 import (
+	"github.com/al-online/mzapi-client-sdk/services"
+	"github.com/al-online/mzapi-client-sdk/services/common/models"
 	"log"
-	"mzapi-sdk/services"
-	"mzapi-sdk/services/common/models"
 	"testing"
 )
 

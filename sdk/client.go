@@ -3,9 +3,9 @@ package sdk
 import (
 	"errors"
 	"fmt"
+	"github.com/al-online/mzapi-client-sdk/pkg/jwt"
+	"github.com/al-online/mzapi-client-sdk/sdk/request"
 	"log"
-	"mzapi-sdk/pkg/jwt"
-	"mzapi-sdk/sdk/request"
 	"net/http"
 	"runtime"
 	"strings"

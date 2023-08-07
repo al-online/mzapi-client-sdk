@@ -2,10 +2,10 @@ package services
 
 import (
 	"encoding/json"
+	"github.com/al-online/mzapi-client-sdk/sdk"
+	"github.com/al-online/mzapi-client-sdk/sdk/request"
+	"github.com/al-online/mzapi-client-sdk/services/common/models"
 	"io"
-	"mzapi-sdk/sdk"
-	"mzapi-sdk/sdk/request"
-	"mzapi-sdk/services/common/models"
 	"net/http"
 )
 
