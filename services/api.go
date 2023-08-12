@@ -13,6 +13,8 @@ type Client struct {
 	sdk.Client
 }
 
+const host = "http://127.0.0.1:8048"
+
 // NewClient 自定义配置
 func NewClient(config *sdk.Config, credential *sdk.Credential) (client *Client, err error) {
 	client = &Client{}
@@ -33,7 +35,7 @@ func NewClientWithSecret(accessKey, secretKey string) (client *Client, err error
 
 func (c *Client) GetNameByGETMethod(name string) (string, error) {
 	var err error
-	url := "http://localhost:9123/api/name?name=" + name
+	url := host + "/api/name?name=" + name
 	req := &request.BaseRequest{
 		URL:     url,
 		Method:  "GET",
@@ -54,7 +56,7 @@ func (c *Client) GetNameByGETMethod(name string) (string, error) {
 
 func (c *Client) GetNameByPOSTMethod(name string) (string, error) {
 	var err error
-	url := "http://localhost:9123/api/name?name=" + name
+	url := host + "/api/name?name=" + name
 	req := &request.BaseRequest{
 		URL:     url,
 		Method:  "POST",
@@ -75,7 +77,7 @@ func (c *Client) GetNameByPOSTMethod(name string) (string, error) {
 
 func (c *Client) GetNameByJSON(user models.User) (string, error) {
 	var err error
-	url := `http://localhost:9123/api/json`
+	url := host + `/api/json`
 	requestBody, err := json.Marshal(user)
 	if err != nil {
 		return "", err
